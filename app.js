@@ -26,7 +26,7 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 }
 
 // Connecting to database
-//connectDatabase();
+connectDatabase();
 
 console.log("Satria debug 3")
 
