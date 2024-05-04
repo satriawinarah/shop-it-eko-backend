@@ -19,12 +19,16 @@ process.on("uncaughtException", (err) => {
   process.exit(1);
 });
 
+console.log("Satria debug 2")
+
 if (process.env.NODE_ENV !== "PRODUCTION") {
   dotenv.config({ path: "config/config.env" });
 }
 
 // Connecting to database
 connectDatabase();
+
+console.log("Satria debug 3")
 
 app.use(
   express.json({
