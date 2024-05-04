@@ -62,11 +62,12 @@ app.get('/', (req, res) => {
 // Using error middleware
 app.use(errorMiddleware);
 
-const server = app.listen(process.env.PORT, () => {
-  console.log(
-    `Server started on PORT: ${process.env.PORT} in ${process.env.NODE_ENV} mode.`
-  );
-});
+// const server = app.listen(process.env.PORT, () => {
+//   console.log(
+//     `Server started on PORT: ${process.env.PORT} in ${process.env.NODE_ENV} mode.`
+//   );
+// });
+console.log("App Running Satria");
 
 //Handle Unhandled Promise rejections
 process.on("unhandledRejection", (err) => {
