@@ -47,6 +47,9 @@ app.use("/api/v1", productRoutes);
 app.use("/api/v1", authRoutes);
 app.use("/api/v1", orderRoutes);
 app.use("/api/v1", paymentRoutes);
+app.get('/', (req, res) => {
+  res.send('Hello, world!');
+});
 
 if (process.env.NODE_ENV === "PRODUCTION") {
   app.use(express.static(path.join(__dirname, "../frontend/build")));
