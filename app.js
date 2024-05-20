@@ -55,22 +55,22 @@ app.get('/', (req, res) => {
   res.send('Hello, world!');
 });
 
-// if (process.env.NODE_ENV === "PRODUCTION") {
-//   app.use(express.static(path.join(__dirname, "../frontend/build")));
+if (process.env.NODE_ENV === "PRODUCTION") {
+  app.use(express.static(path.join(__dirname, "../frontend/build")));
 
-//   app.get("*", (req, res) => {
-//     res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
-//   });
-// }
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+  });
+}
 
 // Using error middleware
 app.use(errorMiddleware);
 
-// const server = app.listen(process.env.PORT, () => {
-//   console.log(
-//     `Server started on PORT: ${process.env.PORT} in ${process.env.NODE_ENV} mode.`
-//   );
-// });
+const server = app.listen(process.env.PORT, () => {
+  console.log(
+    `Server started on PORT: ${process.env.PORT} in ${process.env.NODE_ENV} mode.`
+  );
+});
 console.log("App Running Satria");
 
 //Handle Unhandled Promise rejections
